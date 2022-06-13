@@ -75,6 +75,8 @@ class ArticlesController extends Controller
             $article->save();
         }
         
+        // Show flash message 
+        self::success('Successfully created an article.');
         return Redirect::route('articles.index');
     }
 
@@ -101,6 +103,9 @@ class ArticlesController extends Controller
     public function destroy($id)
     {
         Article::destroy($id);
+
+        // Show flash message 
+        self::success('Successfully deleted an article.');
         return Redirect::route('articles.index');
     }
 }

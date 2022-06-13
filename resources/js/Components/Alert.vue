@@ -1,49 +1,28 @@
-<script>
+<script >
 export default {
   props: {
-    style: String,
-  },  
+    color: String,
+    message: String,
+  },
   data() {
     return {
-      color: 'gray',
+      opacity: "opacity: 0.8"
     }
   },
   mounted() {
-    switch (this.style) {
-      case 'info':
-        this.color = 'blue';
-        break;
-      case 'danger':
-        this.color = 'red';
-        break;
-      case 'success':
-        this.color = 'green';
-        break;
-      case 'warning':
-        this.color = 'yellow';
-        break;
-    
-      default:
-        break;
-    }
-  },
+    setTimeout(() => {
+      this.opacity = "opacity: 0";
+    }, 3000);
+  }
 }
 </script>
 <template>
-  <div id="alert-3" class="flex p-4 mb-4 rounded-lg" :class="`bg-${color}-100 dark:bg-${color}-200`" role="alert">
-    <svg class="flex-shrink-0 w-5 h-5" :class="`text-${color}-700 dark:text-${color}-800`" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-    <div class="ml-3 text-sm font-medium" :class="`text-${color}-700 dark:text-${color}-800`">
-      <slot />
+  <div class="absolute top-0 right-0 mt-10 mr-10 opacity-80 w-1/3 transition-opacity duration-500 ease-out" :style="opacity">
+    <div id="flash-message" class="flex p-4 mb-4 rounded-lg" :class="`bg-${color}-100 dark:bg-${color}-200`" role="alert">
+      <svg class="flex-shrink-0 w-5 h-5" :class="`text-${color}-700 dark:text-${color}-800`" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+      <div class="ml-3 text-sm font-medium" :class="`text-${color}-700 dark:text-${color}-800`">
+        {{ message }}
+      </div>
     </div>
-    <button 
-      type="button" 
-      class="ml-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 p-1.5 inline-flex h-8 w-8"
-      :class="`bg-${color}-100 text-${color}-500 dark:hover:bg-${color}-300 focus:ring-${color}-400 hover:bg-${color}-200 dark:bg-${color}-200 dark:text-${color}-600`"
-      data-dismiss-target="#alert-3" 
-      aria-label="Close"
-    >
-      <span class="sr-only">Close</span>
-      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
   </div>
 </template>

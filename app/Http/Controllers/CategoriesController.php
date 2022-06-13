@@ -55,6 +55,8 @@ class CategoriesController extends Controller
             ])
         );
 
+        // Show flash message 
+        self::success('Successfully created a category.');
         return Redirect::route('categories.index');
     }
 
@@ -80,6 +82,9 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         Category::destroy($id);
+
+        // Show flash message 
+        self::success('Successfully created a category.');
         return Redirect::route('categories.index');
     }
 }

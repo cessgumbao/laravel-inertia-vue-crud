@@ -73,7 +73,8 @@ class UsersController extends Controller
             ],
         );
 
-        session()->flashInput(['message' => 'Successfully created', 'style' => 'success']);
+        // Show flash message 
+        self::success('Successfully created a user.');
         return Redirect::route('users.index');
     }
 
@@ -105,7 +106,8 @@ class UsersController extends Controller
 
         User::destroy($id);
 
-        session()->flash('message', 'Successfully deleted');
+        // Show flash message 
+        self::success('Successfully deleted a user.');
         return Redirect::route('users.index');
     }
 }
