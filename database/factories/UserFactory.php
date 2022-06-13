@@ -40,4 +40,32 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    /**
+     * Indicate that the user is admin.
+     *
+     * @return static
+     */
+    public function notAdmin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role' => 0,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the user is admin.
+     *
+     * @return static
+     */
+    public function isAdmin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'role' => 1,
+            ];
+        });
+    }
 }
