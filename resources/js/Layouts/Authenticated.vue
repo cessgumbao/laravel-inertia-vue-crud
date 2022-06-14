@@ -103,12 +103,11 @@ const showingNavigationDropdown = ref(false);
 
     <!-- Page Content -->
     <main>
-      <Alert v-if="$page.props.flash.message" :color="$page.props.flash.color" :message="$page.props.flash.message" />
       <div class="md:flex h-full">
         <div class="md:flex-1">
           <slot />
         </div>
-        <div class="md:flex md:flex-col items-center bg-gray-300 md:w-96 p-2 hidden min-h-screen md:space-y-8">
+        <div class="md:flex md:flex-col items-center bg-gray-200 md:w-96 p-2 hidden min-h-screen md:space-y-8">
           <div class="pt-8">
             <p>
               Hello 
@@ -119,13 +118,13 @@ const showingNavigationDropdown = ref(false);
             </p>
           </div>
           <div>
-            <Link :href="route('logout')" method="post" class="rounded bg-red-500 hover:bg-red-700 w-full px-4 py-2 text-white text-xs uppercase">
+            <Link :href="route('logout')" method="post" as="button" class="rounded bg-red-500 hover:bg-red-700 w-full px-4 py-2 text-white text-xs uppercase">
               Logout
             </Link>
           </div>
           <div class="px-4">
             <VueCal
-              class="vuecal--date-picker"
+              class="vuecal--date-picker vuecal--green-theme"
               xsmall
               hide-view-selector
               :time="false"

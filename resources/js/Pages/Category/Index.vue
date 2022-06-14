@@ -1,6 +1,7 @@
 <script setup>
 import Categories from './Categories.vue';
 import SearchBox from "@/Components/Searchbox.vue";
+import Alert from "@/Components/Alert.vue";
 import { Inertia } from '@inertiajs/inertia';
 import { Link } from '@inertiajs/inertia-vue3';
 import Pagination from '@/Components/Pagination.vue';
@@ -17,6 +18,7 @@ const destroy = (id) => {
 </script>
 
 <template>
+  <Alert v-if="$page.props.flash.message" :color="$page.props.flash.color" :message="$page.props.flash.message" />
   <Categories>
     <div class="md:flex pb-3 justify-end">
       <div class="md:flex-1 md:grow mr-4 hidden">
