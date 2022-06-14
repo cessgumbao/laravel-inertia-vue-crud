@@ -13,7 +13,7 @@ import { Head } from "@inertiajs/inertia-vue3";
       </h2>
     </template>
 
-    <div class="flex min-h-screen h-full">
+    <div class="md:flex min-h-screen h-full">
 			<div class="mx-auto sm:px-6 lg:px-8 w-full py-8">
 				<div
 					class="bg-white overflow-hidden shadow-sm sm:rounded-lg"
@@ -22,9 +22,6 @@ import { Head } from "@inertiajs/inertia-vue3";
 						<slot />
 					</div>
 				</div>
-			</div>
-			<div class="bg-gray-200 w-96 flex flex-col space-y-4 p-2">
-				
 			</div>
     </div>
   </BreezeAuthenticatedLayout>

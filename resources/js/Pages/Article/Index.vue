@@ -18,19 +18,19 @@ const destroy = (id) => {
 
 <template>
   <Articles>
-    <div class="flex">
-      <div class="flex-1 grow mr-4">
+    <div class="md:flex pb-3 justify-end">
+      <div class="md:flex-1 md:grow mr-4 hidden">
         <SearchBox></SearchBox>
       </div>
-      <div class="flex items-center">
+      <div class="md:flex items-center">
         <Link :href="$page.props.create_url" class="rounded bg-green-500 hover:bg-green-700 w-full px-4 py-2 text-white text-xs uppercase">
           Add New
         </Link>
       </div>
     </div>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <div class="md:flex overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" class="px-6 py-3">
