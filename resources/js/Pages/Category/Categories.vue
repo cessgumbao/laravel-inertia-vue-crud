@@ -1,12 +1,12 @@
 <script setup>
-import BreezeAuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
 import { Head } from "@inertiajs/inertia-vue3";
 </script>
 
 <template>
   <Head title="Categories" />
 
-  <BreezeAuthenticatedLayout>
+  <AuthenticatedLayout>
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
 				Categories
@@ -24,5 +24,5 @@ import { Head } from "@inertiajs/inertia-vue3";
 				</div>
 			</div>
     </div>
-  </BreezeAuthenticatedLayout>
+  </AuthenticatedLayout>
 </template>
